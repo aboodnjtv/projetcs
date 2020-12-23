@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Main {
 
@@ -5,12 +6,16 @@ public class Main {
 		
 		Sort sort = new Sort();
 
-		int array[]= {7,5,3,6,9,4,2,1,8};
+		int array[]= {9,7,2,8,5,6,2,0,9,3,7,5,0,9,1,6,5,9};
+		
+		
 		
 		sort.print(array);
-		sort.quickSort(array, 0, array.length-1);
+		sort.quickSort(array);
 		System.out.println();
 		sort.print(array);
+			
+		
 
 		
 	}
