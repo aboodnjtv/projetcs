@@ -1,10 +1,12 @@
+import java.util.Iterator;
+
 /*
  	//////////////////////////////////////////
 	// *******          Sort        ******* //
 	//////////////////////////////////////////
  
  This class provides these sorting techniques:
- 1) Bubble Sort		(O(n^2))	***Under Construction***
+ 1) Bubble Sort		(O(n^2))
  2) Selection Sort 	(O(n^2))	***Under Construction***
  3) Insertion sort	(O(n^2))	***Under Construction***
  4) Merge Sort		(O(nlog(n))	***Under Construction***
@@ -13,7 +15,37 @@
  
  */
 
+
+
+/*
+ 
+ make sure to check for the null and 0 size arrays and a pre condition
+ 
+ 
+ */
+
 public class Sort {
+	
+	
+	//////////////////////////////////////////
+	// ******* Quick Sort Algorithm ******* //
+	//////////////////////////////////////////
+	
+	//bubbleSort(int array[])
+	//Uses the bubble Sort algorithm to sort a given array of integers
+	public void bubbleSort(int[] array) {
+		
+		if (array.length>1) {
+			for (int i = 0; i < array.length-1; i++) {
+				for (int j = 1; j < array.length-i; j++) {
+					if(array[j]<array[j-1]) {
+						swap(array, j, j-1);
+					}	
+				}
+			}
+		}
+
+	}
 	
 	
 	
@@ -80,12 +112,13 @@ public class Sort {
 	// *******   Helper functions   ******* //
 	//////////////////////////////////////////
 	
+	
+	// print(int[] array)
+	// a function that prints out the array 
 	public void print(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			System.out.print(array[i]+" ");
-		}
-		
+		}	
 	}
 
-	
 }
