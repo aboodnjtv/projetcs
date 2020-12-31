@@ -9,7 +9,7 @@ public class Main {
 		
 		
 		sort.print(array);
-		sort.bubbleSort(array);
+		sort.insertionSort(array);
 		System.out.println();
 		sort.print(array);
 	

@@ -1,17 +1,15 @@
-import java.util.Iterator;
-
 /*
- 	//////////////////////////////////////////
-	// *******          Sort        ******* //
-	//////////////////////////////////////////
+ 	//////////////////////////////////////////////////////////////////////////////////////
+	// *******								Sort								******* //
+	//////////////////////////////////////////////////////////////////////////////////////
  
  This class provides these sorting techniques:
  1) Bubble Sort		(O(n^2))
- 2) Selection Sort 	(O(n^2))	***Under Construction***
- 3) Insertion sort	(O(n^2))	***Under Construction***
- 4) Merge Sort		(O(nlog(n))	***Under Construction***
- 5) Quick Sort		(O(nlog(n))
- 6) Heap Sort		(O(nlog(n))	***Under Construction***
+ 2) Selection Sort 	(O(n^2))
+ 3) Insertion sort	(O(n^2))
+ 4) Merge Sort		(O(n*log(n))	***Under Construction***
+ 5) Quick Sort		(O(n*log(n))
+ 6) Heap Sort		(O(n*log(n))	***Under Construction***
  
  */
 
@@ -26,10 +24,10 @@ import java.util.Iterator;
 
 public class Sort {
 	
-	
-	//////////////////////////////////////////
-	// ******* Quick Sort Algorithm ******* //
-	//////////////////////////////////////////
+		
+ 	//////////////////////////////////////////////////////////////////////////////////////
+	// *******					Bubble	Sort	Algorithm						******* //
+	//////////////////////////////////////////////////////////////////////////////////////
 	
 	//bubbleSort(int array[])
 	//Uses the bubble Sort algorithm to sort a given array of integers
@@ -49,10 +47,57 @@ public class Sort {
 	
 	
 	
+ 	//////////////////////////////////////////////////////////////////////////////////////
+	// *******				Selection	Sort	Algorithm						******* //
+	//////////////////////////////////////////////////////////////////////////////////////
 	
-	//////////////////////////////////////////
-	// ******* Quick Sort Algorithm ******* //
-	//////////////////////////////////////////
+	//selectionSort()
+	//Uses the Selection Sort algorithm to sort a given array of integers
+	public void selectionSort(int[] array) {		
+		if(array.length>0) {
+			int minIndex;
+			int min;
+			for (int i = 0; i < array.length; i++) {
+				min=array[i];
+				minIndex=i;
+				for (int j = i; j < array.length; j++) {
+					if (min>array[j]) {
+						min=array[j];
+						minIndex=j;
+						
+					}
+				}
+				swap(array, minIndex, i);
+			}
+		}
+	}
+	
+	
+	
+ 	//////////////////////////////////////////////////////////////////////////////////////
+	// *******					Insertion	Sort	Algorithm					******* //
+	//////////////////////////////////////////////////////////////////////////////////////
+
+	public void insertionSort(int[] array) {
+		if (array.length>0) {
+			for (int i = 1; i < array.length; i++) {
+				int current=i;
+				for (int j = i; j > -1; j--) {
+					if (array[current]<array[j]) {
+						swap(array, current, j);
+						current=j;
+					}
+				}
+			}
+		}
+	}
+	
+
+	
+	
+ 	//////////////////////////////////////////////////////////////////////////////////////
+	// *******					Quick	Sort	Algorithm						******* //
+	//////////////////////////////////////////////////////////////////////////////////////
 	
 	private int pivot; // quick sort pivot
 	private int pIndex; // quick sort partition index
@@ -98,19 +143,21 @@ public class Sort {
 	}
 	
 	
+
+	
+
+
+ 	//////////////////////////////////////////////////////////////////////////////////////
+	// *******						Helper	Functions							******* //
+	//////////////////////////////////////////////////////////////////////////////////////
+	
+	// swap()
 	// swaps two elements in a given array, (given their indices)
 	private void swap(int array[],int one, int two) {
 		int temp=array[one];
 		array[one]=array[two];
 		array[two]=temp;
 	}
-	
-
-	
-
-	//////////////////////////////////////////
-	// *******   Helper functions   ******* //
-	//////////////////////////////////////////
 	
 	
 	// print(int[] array)
