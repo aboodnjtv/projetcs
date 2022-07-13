@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 hey there
+=======
+hey, How you doing?
+>>>>>>> b35931f... testing 2
